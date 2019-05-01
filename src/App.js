@@ -6,6 +6,7 @@ import About from './About';
 import Cats from './Cats';
 import PageNotFound from './PageNotFound';
 import Header from './Header';
+import Cat from './Cat';
 
 import {
   Link,
@@ -21,20 +22,23 @@ function App() {
       <br></br>
       <Link to='/cats'>Cats</Link> 
       <br></br>
-      <Link to='about'>About</Link>
+      <Link to='/about'>About</Link>
       <br></br>
       <Link to='nowhere'>This goes nowhere</Link>
   
     <Header />
     <Switch>
       {/* <Home /> */}
-      <Route exact path='/' component={Home}/>
+      <Route exact path='/' component={Home} />
       {/* <About /> */}
-      <Route exact path='/cats' component={Cats}/>
+      <Route path='/cats' component={Cats} />
       {/* <Cats /> */}
-      <Route exact path='/about' component={About}/>
+      <Route path='/about' component={About} />
+
+    {/* This route handles any links that dont exist */}
       <Route component={PageNotFound} />
     </Switch>
+    <Route exact path='/cats/:cat' component={Cat} />
     </div>
   );
 }
