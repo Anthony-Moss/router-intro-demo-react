@@ -13,7 +13,8 @@ function Cats(props) {
 
     const catLinks = arrayOfCats.map(catName => (
         <li>
-            <Link to={`/cats/${catName}`}>{catName}</Link>
+            {/* <Link to={`/cats/${catName}`}>{catName}</Link> */}
+            <Link to={`${props.match.path}/${catName}`}>{catName}</Link>
         </li>
     ));
 
